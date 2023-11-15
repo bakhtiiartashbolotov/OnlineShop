@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    height: 8px;
+    background-color: #fffffe;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #3da9fc;
+}
+html{
+    height: 100%;
+}
+body{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fffffe;
+    height: 100%;
+}
+header {
+    background-color: #3da9fc;
+    color: white;
+    padding: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+}
+#logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 7.5rem;
+    line-height: 1.25rem;
+}
+#logo span{
+    color: #ffc220;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+form{
+    width: 40%;
+    position: relative;
+    
+}
+main{
+    padding-top: 3rem;
+    flex: 1;
+}
+h1{
+    text-align: center;
+    color: #094067;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+}
+#error-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+#error-container h1{
+    font-size: 7vh;
+    font-family: 'Montserrat', sans-serif;
+}
+#error-container p{
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 1rem;
+}
+#search_bar{
+    height: 40px;
+    width: 100%;
+    border-radius: 15px;
+    padding-left: 15px;
+    border: none;
+}
+#search_bar:focus{
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+#search_button{
+    cursor: pointer;
+    border: none;
+    background-color: #ffc220;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    right: 0.25rem;
+    top: 4px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 100%;
+
+}
+#search_button:hover{
+    background-color: #3da9fc;
+    color: #fffffe;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 2rem;
+} 
+nav li {
+    margin-right: 1rem;
+    background-image: linear-gradient(#fffffe, #fffffe), linear-gradient(#3da9fc, #3da9fc);
+    background-size: 0 1px, auto;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    transition: all .2s ease-out;
+}
+nav a{
+    color: white;
+    text-decoration: none;
+}
+#navbar a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem;
+    
+}
+#navbar li:hover {
+    background-size: 100% 3px, auto;
+}
+.cart-toggle i{
+    color: #ffc220;
+    font-size: 1.3rem;
+    border: none;
+}
+.cart-toggle:hover i{
+    color: #fffffe;
+}
+.nav-toggle{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: flex-end;
+    width: 30px;
+    height: 25px;
+}
+.nav-toggle .bar{
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+#main-widgets{
+    margin: 0 auto;
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+#main-widgets div{
+    width: 300px;
+    height: 300px;
+    margin-top: 2rem;
+    border: 1px solid black;
+    outline: 150px solid #70707099;
+    outline-offset: -150px;
+    transition: 0.3s;
+    aspect-ratio: 1;
+    position: relative;
+    border-radius: 10px;
+    background-color: white;
+}
+#main-widgets div a{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+#main-widgets div:hover{
+    outline: 8px solid #3da9fc;
+    outline-offset: 14px;
+}
+#main-widgets span{
+    color: #5f6c7b;
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+    margin-top: 1vh;
+    text-align: center;
+}
+#tech-container{
+    background-image: url(../images/2.webp);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+#fasion-container{
+    background-image: url(../images/fashion.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+#auto-container{
+    background-image: url(../images/auto.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+#jewelery-container{
+    background-image: url(../images/jew.jpeg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+#food-container{
+    background-image: url(../images/av.webp);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+#cart-aside {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fffffe;
+    color: #5f6c7b;
+    padding: 20px;
+    padding-bottom: 5rem;
+    position: fixed;
+    top: 72px;
+    right: -20rem;
+    width: 20rem;
+    height: 100%;
+    box-shadow: -5px 0 5px -5px #333;
+    z-index: 9999;
+    overflow-y: scroll;
+    transition: all .5s ease-out;
+}
+#cart-aside.active {
+    right: 0;
+}
+#cart-aside ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#cart-aside .checkout-button{
+    margin-top: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    width: auto;
+    font-size: .875rem;
+    height: 2rem;
+    background-color: #3da9fc;
+    border-radius: 62.5rem;
+    padding: 0.25rem 1rem;
+    color: #fffffe;
+    border: 1px solid #90b4ce;
+}
+#cart-aside .checkout-button:hover{
+    border: 3px solid #90b4ce;
+}
+#cart-aside .checkout-button:active{
+    background-color: black;
+    color: white;
+}
+button.cart-remove{
+    border: none;
+    background-color: transparent;
+    color: #ef4565;
+    font-size: 1.2em;
+    margin-left: 0.5rem;
+}
+#cart li {
+    margin-bottom: 10px;
+}
+#total {
+    font-weight: bold;
+}
+#cart-aside .cart-toggle{
+    display: none;
+    text-align: center;
+    vertical-align: middle;
+}
+footer{
+    margin-top: auto;
+    width: 100%;
+    font-family: "Noto Sans", sans-serif;
+    color: #fffffe;
+    background-color:  #3da9fc;
+}
+#contact{
+    padding: 3rem 0;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+#contact ul {
+    margin-top: 1rem    ;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+#contact h2{
+    text-align: left;
+    color: #fffffe;
+}
+#contact li{
+    font-family: Arial, sans-serif;
+}
+#contact a{
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+@media (max-width:768px){
+    nav{
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    form{
+        width: 100%;
+        margin: 1.5rem auto;
+    }
+    h1{
+        margin-top: 9rem;
+    }
+}
+@media (max-width:480px){
+    header{
+        width: 100%;
+        padding: 0.5rem;
+        position: fixed;
+        z-index: 200;
+    }
+    #logo{
+        margin: 0.5rem auto;
+    }
+    nav{
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    #navbar{
+        display: flex;
+        overflow: hidden;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        align-self: center;
+        width: 100%;
+        transition: all .5s ease-in-out;
+        max-height: 0;
+    }
+    #navbar.active{
+        max-height: 216px;
+    }
+    form{
+        width: 85%;
+        margin: 0;
+        margin-top: 0.25rem;
+    }
+    .nav-toggle{
+        display: flex;
+        align-self: center;
+        position: absolute;
+        right: 0.5rem;
+        top: 4.75rem;
+    }
+    nav li{
+        margin-top: 0.25rem;
+        text-align: center;
+        width: 100%;
+    }
+    #cart-aside{
+        top: 0;
+    }
+    #cart-aside .cart-toggle{
+        width: 2rem;
+        height: 2rem;
+        display: block;
+        float: right;
+    }
+    #cart-aside .cart-toggle i{
+        color: black;
+    }
+    h1{
+        font-size: 2rem;
+    }
+}
