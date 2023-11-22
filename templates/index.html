@@ -1,62 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Shop | Home</title>
-    <link rel="icon" type="images/x-icon" href="images/logo.png">
-    <link rel="stylesheet" href="static/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="#" id="logo">ONLINE <span>SHOP</span></a>
-            <form>
-                <input type="text" id="search_bar" name="query" placeholder="Search...">
-                <button type="submit" id="search_button"><i class="fa fa-search"></i></button>
-            </form>
-            <ul id="navbar">
-                <li><a href="tech.html">Tech</a></li>
-                <li><a href="fashion.html">Fashion</a></li>
-                <li><a href="auto.html">Auto</a></li>
-                <li><a href="jewelry.html">Jewelry</a></li>
-                <li><a href="food.html">Food</a></li>
-                <li><a href="#" class="cart-toggle"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-            </ul>
-            <a href="#" class="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </a>
-        </nav>
-    </header>
+    {% block content %}
     <main>
         <div id="banner">
         </div>
         <h1>Departments</h1>
         <section id="main-widgets">
             <div id="tech-container">
-                <a href="tech.html"></a>
+                <a href="{% url "tech_page" %}"></a>
                 <span>Computers</span>
             </div>
             <div id="fasion-container">
-                <a href="fashion.html"></a>
+                <a href="{% url "fashion_page" %}"></a>
                 <span>Fashion</span>
             </div>
             <div id="auto-container">
-                <a href="auto.html"></a>
+                <a href="{% url "auto_page" %}"></a>
                 <span>Auto</span>
             </div>
             <div id="jewelery-container">
-                <a href="jewelry.html"></a>
+                <a href="{% url "jewelry_page" %}"></a>
                 <span>Jewelry</span>
             </div>
             <div id="food-container">
-                <a href="food.html"></a>
+                <a href="{% url "food_page" %}"></a>
                 <span>Food</span>
             </div>
         </section>
@@ -70,15 +40,6 @@
             <button onclick="checkout()" class="checkout-button">Checkout</button>
         </aside>
     </main>
-    <footer>
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <ul>
-              <li>Phone number: <a href="tel:+996701250220"> +996 701 250 220</a></li>
-              <li>Email: <a href="mailto:bakhtiiar.tasholotov@alatoo.edu.kg">bakhtiiar.tasholotov@alatoo.edu.kg</a></li>
-            </ul>
-          </section>
-    </footer>
     <script>
     $('.cart-toggle').on('click', function() {
         $('#cart-aside').toggleClass('active');
@@ -88,9 +49,10 @@
         
     });
     </script>
-    <script src="scripts/script.js"></script>
-    <script src="scripts/cart.js">
+    <script src="static/script.js"></script>
+    <script src="static/cart.js">
         window.onload = loadCart;
     </script>
+    {% endblock content %}
 </body>
 </html>

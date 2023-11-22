@@ -1,46 +1,22 @@
+{% extends "base.html" %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% block head %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Shop | Tech</title>
     <link rel="icon" type="images/x-icon" href="images/logo.png">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/fasion.css">
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/fasion.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    {% endblock head %}
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html" id="logo">ONLINE <span>SHOP</span></a>
-            <a href="#" class="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </a>
-            <form>
-                <input type="search" id="search_bar" name="query" placeholder="Search...">
-                <button type="submit" id="search_button"><i class="fa fa-search"></i></button>
-            </form>
-            <ul id="navbar">
-                <li><a href="tech.html">Tech</a></li>
-                <li><a href="fashion.html">Fashion</a></li>
-                <li><a href="auto.html">Auto</a></li>
-                <li><a href="jewelry.html">Jewelry</a></li>
-                <li><a href="food.html">Food</a></li>
-                <li><a href="#" class="cart-toggle"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-            </ul>
-        </nav>
-        <div class="navigation">
-            <ul>
-                <li><a href="#mens-clothing">Mens Clothing</a></li>
-                <li><a href="#womens-clothing">Womens Clothing</a></li>
-            </ul>
-        </div>
-    </header>
+    {% block content %}
     <main>
         <h1>Clothing</h1>
         <section>
@@ -121,15 +97,6 @@
             <button onclick="checkout()" class="checkout-button">Checkout</button>
         </aside>
     </main>
-    <footer>
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <ul>
-              <li>Phone number: <a href="tel:+996701250220"> +996 701 250 220</a></li>
-              <li>Email: <a href="mailto:bakhtiiar.tasholotov@alatoo.edu.kg">bakhtiiar.tasholotov@alatoo.edu.kg</a></li>
-            </ul>
-          </section>
-    </footer>
     <script>
         $('.cart-toggle').on('click', function() {
             $('#cart-aside').toggleClass('active');
@@ -142,5 +109,6 @@
     <script src="scripts/cart.js">
         window.onload = loadCart;
     </script>
+    {% endblock content %}
 </body>
 </html>

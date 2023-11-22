@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block head %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Online Shop</title>
+        <link rel="icon" type="images/x-icon" href="images/logo.png">
+        <link rel="stylesheet" href="static/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+        {% endblock head %}
+    </head>
+<body>
+    {% block header %}
+    <header>
+        <nav>
+            <a href="{% url "home" %}" id="logo">ONLINE <span>SHOP</span></a>
+            <form>
+                <input type="text" id="search_bar" name="query" placeholder="Search...">
+                <button type="submit" id="search_button"><i class="fa fa-search"></i></button>
+            </form>
+            <ul id="navbar">
+                <li><a href="{% url "tech_page" %}">Tech</a></li>
+                <li><a href="{% url "fashion_page" %}">Fashion</a></li>
+                <li><a href="{% url "auto_page" %}">Auto</a></li>
+                <li><a href="{% url "jewelry_page" %}">Jewelry</a></li>
+                <li><a href="{% url "food_page" %}">Food</a></li>
+                <li><a href="#" class="cart-toggle"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+            </ul>
+            <a href="#" class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+        </nav>
+    </header>
+    {% endblock header %}
+    {% block content %}{% endblock content %}
+    {% block footer %}
+    <footer>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <ul>
+              <li>Phone number: <a href="tel:+996701250220"> +996 701 250 220</a></li>
+              <li>Email: <a href="mailto:bakhtiiar.tasholotov@alatoo.edu.kg">bakhtiiar.tasholotov@alatoo.edu.kg</a></li>
+            </ul>
+          </section>
+    </footer>
+    {% endblock footer %}
+</body>
+</html>
