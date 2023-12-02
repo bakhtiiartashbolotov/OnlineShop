@@ -164,7 +164,7 @@ nav a{
     flex-wrap: wrap;
     margin-bottom: 2rem;
 }
-#main-widgets div{
+#main-widgets .widget{
     width: 300px;
     height: 300px;
     margin-top: 2rem;
@@ -176,47 +176,27 @@ nav a{
     position: relative;
     border-radius: 10px;
     background-color: white;
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
-#main-widgets div a{
+#main-widgets .widget a{
     width: 100%;
     height: 100%;
     position: absolute;
 }
-#main-widgets div:hover{
+#main-widgets .widget:hover{
     outline: 8px solid #3da9fc;
     outline-offset: 14px;
 }
-#main-widgets span{
+#main-widgets h3{
     color: #5f6c7b;
     font-family: 'Montserrat', sans-serif;
     display: block;
     margin-top: 1vh;
     text-align: center;
 }
-#tech-container{
-    background-image: url(../images/2.webp);
-    background-size: 100%;
-    background-repeat: no-repeat;
-}
-#fasion-container{
-    background-image: url(../images/fashion.jpg);
-    background-size: 100%;
-    background-repeat: no-repeat;
-}
-#auto-container{
-    background-image: url(../images/auto.jpg);
-    background-size: 100%;
-    background-repeat: no-repeat;
-}
-#jewelery-container{
-    background-image: url(../images/jew.jpeg);
-    background-size: 100%;
-    background-repeat: no-repeat;
-}
-#food-container{
-    background-image: url(../images/av.webp);
-    background-size: 100%;
-    background-repeat: no-repeat;
+#main-widgets a{
+    text-decoration: none;
 }
 #cart-aside {
     font-family: 'Montserrat', sans-serif;

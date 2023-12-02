@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block head %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Online Shop | Tech</title>
+        <link rel="icon" type="images/x-icon" href="images/logo.png">
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <link rel="stylesheet" href="{% static 'category.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+        {% endblock head %}
+    </head>
+<body>
+    {% block content %}
+    <h1>{{ category.name }}</h1>
+
+
+    {% if products %}
+    <div class='items'>
+    {% for product in products %}
+    
+    <div class='item'>
+        <img src="{{ product.image.url }}" alt="{{ product.title }}">
+        <h2>{{ product.title }}</h2>
+        <p>{{ product.description }}</p>
+        <p>Price: {{ product.price }}$</p>
+        <button>Add to Cart</button>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+    <h2>Not Found</h2>
+{% endif %}
+<aside id="cart-aside">
+    <button class="cart-toggle"><i class="fa fa-close"></i></button>
+    <h2>Shopping Cart</h2>
+    <ul id="cart">
+        <li>No items in cart</li>
+    </ul>
+    <p>Total: $<span id="total">0</span></p>
+    <button onclick="checkout()" class="checkout-button">Checkout</button>
+</aside>
+<script>
+    $('.cart-toggle').on('click', function() {
+        $('#cart-aside').toggleClass('active');
+    });
+    $('.nav-toggle').on('click', function() {
+        $('#navbar').toggleClass('active');
+        
+    });
+    </script>
+    {% endblock content %}
+</body>

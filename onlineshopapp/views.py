@@ -1,15 +1,27 @@
-from django.http import HttpRequest
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
+from django.views.generic import TemplateView, DetailView
 
-def homepage(request: HttpRequest):
-    return render(request, 'index.html')
-def techpage(request):
-    return render(request, 'tech.html')
-def fashionpage(request):
-    return render(request, 'fashion.html')
-def autopage(request):
-    return render(request, 'auto.html')
-def jewelrypage(request):
-    return render(request, 'jewelry.html')
-def foodpage(request):
-    return render(request, 'food.html')
+from onlineshopapp.models import Category, Product;
+
+class HomePageView(TemplateView):
+    template_name = 'home.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data();
+        context['products'] = Product.objects.all();
+        context['categories'] = Category.objects.all();
+        return context;
+
+class CategoryDetailView(DetailView):
+    model = Category
+    template_name = 'category.html'
+    context_object_name = 'category'
+
+    def get_object(self, queryset=None):
+        return get_object_or_404(Category, id=self.kwargs.get('category_id'))
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['products'] = Product.objects.filter(category=self.object)
+        context['categories'] = Category.objects.all()
+        return context

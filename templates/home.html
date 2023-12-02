@@ -9,28 +9,16 @@
         </div>
         <h1>Departments</h1>
         <section id="main-widgets">
-            <div id="tech-container">
-                <a href="{% url "tech_page" %}"></a>
-                <span>Computers</span>
+            {% for category in categories %}
+            <div class="widget" style="background-image: url('{{ category.image.url }}');">
+                <a href="category/{{ category.id }}">
+                    <h3>{{ category.name }}</h3>
+                </a>
             </div>
-            <div id="fasion-container">
-                <a href="{% url "fashion_page" %}"></a>
-                <span>Fashion</span>
-            </div>
-            <div id="auto-container">
-                <a href="{% url "auto_page" %}"></a>
-                <span>Auto</span>
-            </div>
-            <div id="jewelery-container">
-                <a href="{% url "jewelry_page" %}"></a>
-                <span>Jewelry</span>
-            </div>
-            <div id="food-container">
-                <a href="{% url "food_page" %}"></a>
-                <span>Food</span>
-            </div>
+            {% endfor %}
         </section>
         <aside id="cart-aside">
+            {% if request.user.is_authenticated %}
             <button class="cart-toggle"><i class="fa fa-close"></i></button>
             <h2>Shopping Cart</h2>
             <ul id="cart">
@@ -38,6 +26,15 @@
             </ul>
             <p>Total: $<span id="total">0</span></p>
             <button onclick="checkout()" class="checkout-button">Checkout</button>
+            <a href="{% url "logout" %}">Log Out</a>
+            {% else %}
+            <button class="cart-toggle"><i class="fa fa-close"></i></button>
+            <h2>Shopping Cart</h2>
+            <p>You are not logged in</p>
+            <a href="{% url 'login' %}">Log In</a>
+            <a href="{% url 'signup' %}">Sign Up</a>
+            {% endif %}
+            
         </aside>
     </main>
     <script>
@@ -48,10 +45,6 @@
         $('#navbar').toggleClass('active');
         
     });
-    </script>
-    <script src="static/script.js"></script>
-    <script src="static/cart.js">
-        window.onload = loadCart;
     </script>
     {% endblock content %}
 </body>

@@ -11,9 +11,9 @@ form.addEventListener('submit', event => {
     let url;
 
     if (techArray.includes(query)) {
-        url = 'tech.html';
+        url = '/tech/';
     } else if (fashionArray.includes(query)) {
-        url = 'fashion.html';
+        url = '/fashion/';
     } else if (autoArray.includes(query)) {
         url = 'auto.html';
     } else if (jewelryArray.includes(query)){
