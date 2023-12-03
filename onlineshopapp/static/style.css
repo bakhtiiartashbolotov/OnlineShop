@@ -213,6 +213,8 @@ nav a{
     z-index: 9999;
     overflow-y: scroll;
     transition: all .5s ease-out;
+    display: flex;
+    flex-direction: column;
 }
 #cart-aside.active {
     right: 0;
@@ -258,6 +260,26 @@ button.cart-remove{
     display: none;
     text-align: center;
     vertical-align: middle;
+}
+#cart-aside .not_logged{
+    color: red;
+}
+#cart-aside a{
+    text-decoration: none;
+    background-color: #3da9fc;
+    color: white;
+    padding: 0.2rem;
+    border-radius: 5px;
+    border: 1px solid #90b4ce;
+    margin-top: 0.5rem;
+    width: 100%;
+    text-align: center;
+    display: block;
+    justify-items: flex-end;
+}
+#cart-aside a:hover{
+    background-color: white;
+    color: #3da9fc;
 }
 footer{
     margin-top: auto;

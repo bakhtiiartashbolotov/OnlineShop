@@ -17,25 +17,7 @@
             </div>
             {% endfor %}
         </section>
-        <aside id="cart-aside">
-            {% if request.user.is_authenticated %}
-            <button class="cart-toggle"><i class="fa fa-close"></i></button>
-            <h2>Shopping Cart</h2>
-            <ul id="cart">
-                <li>No items in cart</li>
-            </ul>
-            <p>Total: $<span id="total">0</span></p>
-            <button onclick="checkout()" class="checkout-button">Checkout</button>
-            <a href="{% url "logout" %}">Log Out</a>
-            {% else %}
-            <button class="cart-toggle"><i class="fa fa-close"></i></button>
-            <h2>Shopping Cart</h2>
-            <p>You are not logged in</p>
-            <a href="{% url 'login' %}">Log In</a>
-            <a href="{% url 'signup' %}">Sign Up</a>
-            {% endif %}
-            
-        </aside>
+        
     </main>
     <script>
     $('.cart-toggle').on('click', function() {

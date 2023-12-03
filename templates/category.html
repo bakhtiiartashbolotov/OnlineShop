@@ -37,15 +37,6 @@
 {% else %}
     <h2>Not Found</h2>
 {% endif %}
-<aside id="cart-aside">
-    <button class="cart-toggle"><i class="fa fa-close"></i></button>
-    <h2>Shopping Cart</h2>
-    <ul id="cart">
-        <li>No items in cart</li>
-    </ul>
-    <p>Total: $<span id="total">0</span></p>
-    <button onclick="checkout()" class="checkout-button">Checkout</button>
-</aside>
 <script>
     $('.cart-toggle').on('click', function() {
         $('#cart-aside').toggleClass('active');
