@@ -1,0 +1,52 @@
+h1{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+#registration_box{
+    width: 40%;
+    margin: auto;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+    padding: 20px;
+    border: 1px solid #094067;
+    border-radius: 10px;
+    background-color: #3da9fc;
+}
+#registration_box form{
+    margin: 0 auto;
+    width: 100%;
+}
+#registration_box input{
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #094067;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+#registration_box label{
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+#registration_box button{
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: #3da9fc;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: white;
+}
+#registration_box button:hover{
+    background-color: #094067;
+}
+#registration_box span,li{
+    font-size: 10px;
+    color: #094067;
+    font-family: 'Montserrat', sans-serif;
+}
